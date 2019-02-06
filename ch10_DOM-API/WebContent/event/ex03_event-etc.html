@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	
+</style>
+	<script>
+		window.onload = function(){
+			var area = document.querySelector("#area");
+			console.log(area);
+		}
+	</script>
+</head>
+<body>
+	<textarea id="area"></textarea>
+	<hr />
+	<select id="fruits" onchange="change();">
+		<option value="apple">사과</option>
+		<option value="babana">바나나</option>
+		<option value="coconut">코코넛</option>
+	</select>
+	<input type="radio" name="gender" value="male" onchange="choose(event)" />남성
+	<input type="radio" name="gender" value="female" onchange="choose(event)" />여성
+	<script>
+		function change(){
+			var fruits = document.querySelector("#fruits");
+			console.log(fruits.value);
+		}
+		function choose(event){
+			console.log(event.target);
+		}
+	</script>
+</body>
+</html>

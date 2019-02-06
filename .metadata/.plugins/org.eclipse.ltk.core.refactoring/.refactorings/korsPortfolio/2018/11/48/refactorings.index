@@ -1,0 +1,20 @@
+1543279762667	Rename package 'com.inc.content.servlet'
+1543279769040	Rename package 'com.inc.contenst.servlet'
+1543287943381	Rename package 'com.inc.contents.servlet'
+1543288318634	Delete element
+1543288358490	Delete element
+1543288643734	Rename type 'korsDao'
+1543304370963	Rename type 'gallery'
+1543305795146	Rename type 'image'
+1543310734489	Rename resource 'user.xml'
+1543368670755	Rename type 'ImageServlet'
+1543372786156	Delete element
+1543374872309	Move compilation unit
+1543374887418	Delete element
+1543374911235	Delete element
+1543382582139	Rename resource 'korsLHYCEO.jsp'
+1543382586753	Rename resource 'korsLHYCEO.html'
+1543393380686	Rename resource 'movie.jpg'
+1543395235330	Rename type 'imageDao'
+1543395271307	Rename type 'spiderDao'
+1543396463968	Copy files

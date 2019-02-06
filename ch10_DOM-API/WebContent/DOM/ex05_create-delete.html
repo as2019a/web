@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<select id="food">
+		<option value="">::선택::</option>
+	</select>
+	<input type="text" id="input" />
+	<button type="button" onclick="add();">추가</button>
+	<button type="button" onclick="del();">삭제</button>
+	<button type="button" onclick="deletAll();">전체삭제</button>
+	<script>
+		function add(){
+			var inputFood = 
+				document.querySelector("#input").value;
+			if(inputFood.length == 0){
+				return;
+			}
+			var option = document.createElement("option");
+			option.innerText = inputFood;
+			
+			var food = document.querySelector("#food");
+			food.appendChild(option);
+			
+			//input이라는 아이디를 가지고 있는 태그의 입력칸을 
+			//공백으로 만드시오.
+			document.querySelector("#input").value = "";
+		}
+		
+		function del(){
+			var inputFood = 
+				document.querySelector("#input").value;
+			var foods = 
+				document.querySelectorAll("#food > option");
+			for(var option of foods){
+				if(option.innerHTML == inputFood){
+					//태그 자체를 삭제
+					option.remove();
+					//자식태그를 삭제
+					//document.querySelector("#food").removeChild(option);
+				}
+			}
+		}
+		
+		function deletAll(){
+			document.querySelector("#food").innerHTML = "<option>::선택::</option>";
+			/*var firstOption = document.createElement("option");
+			firstOption.innerHTML = "::선택::";
+			document.querySelector("#food").appendChild(firstOption);*/
+		}
+	</script>
+</body>
+</html>
+

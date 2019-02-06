@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*속성을 사용*/
+	[title]{color:red;}
+	/*속성이 특정한 값과 일치*/
+	[title="lang"]{color:green;}
+	/*속성에 특정한 값이 포함*/
+	[title*="an"]{color:blue;}
+	/*속성이 특정한 값으로 시작*/
+	[href^="http"]{background-color:black;}
+	/*속성이 특정한 값으로 끝*/
+	[href$="com"]{font-size:20px;}
+	/*선택자의 조합 : and*/
+	a[title]{text-decoration:overline;}
+</style>
+</head>
+<body>
+	<h1 title="">Information</h1>
+	<h2 title="lang">Ianguage</h2>
+	<h3 title="bang">country</h3>
+	<a href="http://www.increpas.com">TNCREPAS</a>
+	<a title="anchor" href="ahttp://www.naver.com">NAVER</a>
+</body>
+</html>

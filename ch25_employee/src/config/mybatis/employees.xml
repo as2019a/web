@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employees">
+	
+	<select id="selectOne" parameterType="int"
+			resultMap="departmentMap">
+		select * from employees	where employee_id = #{value}
+	</select>
+	
+	<resultMap id="departmentMap" type="Employee">
+		<result column="employee_id" 
+				property="employee_id"/>
+		<association property="department"
+					 javaType="Department"
+					 column="department_id"
+					 select="departments.selectOne"/>
+		<collection property="mentee_list"
+					ofType="Employee"
+					column="employee_id"
+					select="selectMenteeList"/>
+	</resultMap>
+	
+	<select id="selectMenteeList" parameterType="int"
+			resultType="Employee">
+		select * from employees	where manager_id = #{value}
+	</select>
+	
+	
+</mapper>

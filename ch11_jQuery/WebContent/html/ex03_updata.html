@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.link{
+		text-decoration: none;
+		color:seagreen;
+	}
+</style>
+</head>
+<body>
+	<p id="msg1" class="msg" title="hello">Hello World</p>
+	<p id="msg2" class="msg" title="welcome">Welcome to programing world</p>
+	<ul id="subjects">
+		<li><a href="">Java</a></li>
+		<li><a href="">HTML</a></li>
+		<li><a href="">CSS</a></li>
+		<li><a href="">JS</a></li>
+	</ul>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		//content
+		console.log($("#msg1").html()); //innerHTML
+		console.log($("#msg1").text()); //innerText
+		
+		//content-updata
+		$("#msg1").text("hi world");
+		//실습 : 아이디가 msg2인 p태그의 내용을 한글로 변경하시오.
+		$("#msg2").text("<b>프로그래밍 세상</b>에 오신 것을 환영합니다.");
+		$("#msg2").html("<b>프로그래밍 세상</b>에 오신 것을 환영합니다.");
+		
+		//attribute
+		console.log($("#msg1").attr("title"));
+		//값을 1개 변경
+		$("#msg1").attr("title", "안녕하세요");
+		//값을 동시에 여러 개 변경
+		$("#msg1").attr({title:"하이", onclick:"alert('hello');"});
+		
+		//실습 ul태그 안에 있는 a태그에 link라는 클래스를 추가하시오.
+		//$("#subjects a").attr({class:"link"});
+		
+		//class
+		$("#subjects a").addClass("link");
+		$("#subjects>li:nth-of-type(2n)>a").removeClass("link");
+		
+		//css
+		$("p:first-of-type").css({fontSize:"30px", color:"tomato"});
+		//실습 홀수번째 li태그의 listStyle square로 변경
+		$("#subjects li:nth-of-type(2n-1)").css({listStyle:"square"});
+	</script>
+</body>
+</html>

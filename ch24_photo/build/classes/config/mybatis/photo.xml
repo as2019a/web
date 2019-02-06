@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="photo">
+	<select id="selectList" resultType="Photo">
+		select * from photo
+	</select>
+	
+	<insert id="insert" parameterType="Photo">
+		insert into photo values(
+			seq_photo_id.nextval, #{title},
+				  #{filename}, #{password}, sysdate)
+	</insert>
+	
+	<delete id="delete" parameterType="HashMap">
+		delete from photo 
+		where id = #{id} and password = #{password}
+	</delete>
+</mapper>

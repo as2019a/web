@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ch12_servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>MypageServlet</servlet-name>
+    <servlet-class>com.inc.servlet.MypageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MypageServlet</servlet-name>
+    <url-pattern>/mypage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>com.inc.servlet.LifeCycleServlet</servlet-class>
+    <init-param>
+    	<param-name>company</param-name>
+    	<param-value>increpas</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/lifecycle</url-pattern>
+  </servlet-mapping>
+</web-app>

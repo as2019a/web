@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <form action="">
+    	<input type="text" name="title"/>
+    	<button type="button" onclick="check(this.form);">확인</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    	function check(f){
+    		//m 또는 f
+    		var pattern = /^(m|f)$/;
+    		//m 또는 f 또는 a
+    		var pattern = /^(m|f|a)$/;
+    		//male 또는 female (왼쪽|오른쪽)
+    		var pattern = /^(male|female)$/;
+    		var pattern = /^(fe|)male$/;
+    		var pattern = /^(fe|){0,1}male$/;
+    		var pattern = /^(fe|)?male$/;
+    		//a 또는 b 또는 c
+    		var pattern = /^(a|b|c)$/;
+    		var pattern = /^[abc]$/;
+    		var pattern = /^[a-c]$/;
+    		var pattern = /^[a-d]$/;
+    		//한글 문자 한계
+    		var pattern = /^[가-힣]$/;
+    		//실습 : ㄱ~ㅎ ㅏ~ㅣ
+    		var pattern = /^[가-힣ㄱ-ㅎㅏ-ㅣ]{5,10}$/;
+    		//실습 : 이름을 받는 패턴 작성
+    		var pattern = /^[가-힣]{2,10}$/;
+    		//실습 : 주민등록번호 패턴 작성 //900000-1000000
+    		var pattern = /^[0-9]{6}-[1-4][0-9]{6}$/;
+    		//실습 : 아이디-한글을 제외하며 6~10이내
+    		var pattern = /^[-_!@#$%^0-9A-Za-z]{6~10}$/;
+    		var pattern = /^[^가-힣]{6~10}$/;
+    		
+    		if(pattern.test(f.title.value)){
+    			alert("적합");
+    		}else{
+    			alert("부적합");
+    		}
+    		
+    	}
+    </script>
+  </body>
+</html>

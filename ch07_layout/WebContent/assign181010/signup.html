@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.te{
+		text-align: center;
+	}
+	input[type="text"], input[type="password"], input[type="date"]{
+		border: 1px solid gray;
+		border-radius: 5px;
+		padding: 5px;
+	}
+	button, input[type="button"]{
+		border: none;
+		border-radius: 10px;
+		padding: 10px;
+		background-color: #2d98da;
+		color: #f7f1e3;
+	}
+</style>
+</head>
+<body>
+	<h1 class="te">Sign up</h1>
+	<h3 class="te">Be a member of the Increpas</h3>
+	<hr />
+	<label for="id">ID</label>
+	<input type="text" id="id" placeholder="5 ~ 10 characters" /><br />
+	<label for="password">Password</label>
+	<input type="password" id="password" 
+		   placeholder="5 ~ 10 characters" /><br />
+	<label for="Name">Name</label>	   
+	<input type="text" placeholder="5 ~ 10 characters" /><br />
+	<label for="Birth">Birth</label>
+	<input type="date" /><br />
+	<label for="Gender">Gender</label>
+	<input type="radio" id="male" name="gender" checked/>
+	<label for="male">male</label>
+	<input type="radio" id="female" />
+	<label for="female">female</label><br />
+	<label for="Hobby">Hobby</label>
+	<input type="checkbox" id="reading"/>
+	<label for="reading">reading</label>
+	<input type="checkbox" id="sports"/>
+	<label for="sports">sports</label>
+	<input type="checkbox" id="movie"/>
+	<label for="movie">movie</label><br />
+	<label for="Job">Job</label>
+	<select>
+		<option>Teacher</option>
+		<option>Student</option>
+		<option>Etc</option>
+	</select>
+	<hr />
+	<label for="intoduce your self~!">intoduce your self~!</label><br />
+	<textarea cols="50" rows="5"></textarea>
+	<hr />
+	<button type="button">submit</button>
+	<button type="button">cancle</button>
+	<hr />
+	<a href="/assign181004/mainpage.html">main page</a>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#area{
+		width:200px;
+		height:200px;
+		background-color: tomato;
+	}
+	
+	#cross{
+		position:absolute;
+		top:500px;
+		left:500px;
+	}
+	.direction{
+		position:absolute;
+		width: 50px;
+		height: 50px;
+		background-color: black;
+	}
+	
+	#up{
+		left:50px;
+	}
+	#down{
+		left:50px; top:100px;
+	}
+	#left{
+		top:50px;
+	}
+	#right{
+		top:50px; left:100px;
+	}
+</style>
+</head>
+<body>
+	<h1 onclick="alert('hello~');">Hello world!</h1>
+	<div id="area" draggable="true">click me!</div>
+	<div id="cross">
+		<div id="up" class="direction"></div>
+		<div id="down" class="direction"></div>
+		<div id="left" class="direction"></div>
+		<div id="right" class="direction"></div>
+	</div>
+	<script>
+		var area = document.querySelector("#area");
+		console.log(area.onclick);
+		//이벤트 한개 적용
+		area.onclick = function(){
+			area.style.backgroundColor = "red";
+			area.innerHTML += "<br>안녕하세요.";
+		}
+		console.log(area.onclick);
+		
+		//이벤트 복수개 적용
+		if(area.addEventListener){
+			//FireFox, Chrome, Safari, IE9+
+			area.addEventListener("click", function(){
+				area.innerHTML += "<br>Hello";
+			});
+		}else{
+			//IE8-
+			area.attachEventLister("onclick", function(){
+				area.innerHTML += "<br>Hello";
+			});
+		}
+		
+		area.ondblclick = function(){
+			console.log("더블클릭");
+		}
+		
+		area.onmouseover = function(){
+			area.style.backgroundColor = "blue";
+		}
+		area.onmouseout = function(){
+			area.style.backgroundColor = "tomato";
+		}
+		area.ondrag = function(){
+			console.log("드래그중");
+		}
+	</script>
+	<script>
+		var cross = document.querySelector("#cross");
+		var up = document.querySelector("#up");
+		var down = document.querySelector("#down");
+		var left = document.querySelector("#left");
+		var right = document.querySelector("#right");
+		
+		var x = 500;
+		var y = 500;
+		up.onclick = function(){
+			y -= 50;
+			cross.style.top = y + "px";
+		}
+		down.onclick = function(){
+			y += 50;
+			cross.style.top = y + "px";
+		}
+		left.onclick = function(){
+			x -= 50;
+			cross.style.left = x + "px";
+		}
+		right.onclick = function(){
+			x += 50;
+			cross.style.left = x + "px";
+		}
+	</script>
+</body>
+</html>
+

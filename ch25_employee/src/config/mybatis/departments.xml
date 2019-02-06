@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="departments">
+	<select id="selectOne" parameterMap="int" 
+			resultMap="managerMap">
+		select * from departments where 
+							department_id =	#{value}
+	</select>
+	
+	<resultMap id="managerMap" type="Department">
+		<association property="manager"
+					javaType="Employee"
+					column="manager_id"
+					select="employees.selectOne"/>
+	</resultMap>
+	
+	
+</mapper>

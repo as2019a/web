@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*1. id가 title인 태그의 글씨색을 gray로 변경하시오*/
+	/*2. p태그의 배경을 silver로 변경하시오*/
+	/*3. 클래스가 sub인 클래스의 리스트 스타일을 숫자로 변경하시오*/
+	/*4. 클래스가 sub인 클래스의 자식태그들에 마우스를 올렸을 때 배경색을 검정, 글씨색을 흰색으로 변경되게 하시오*/
+	/*5. 클래스가 main인 클래스의 자손 li태그의 글씨크기(font-size)를 10px로 변경하시오 */
+	/*6. title속성에 no라는 글자가 포함되어 있으면 글씨크기를 20px로 변경하시오 */
+	h1{
+		color:gray;
+	}
+	p{
+		background-color:silver;
+	}
+	ul li ul{
+		list-style:decimal;
+	}
+	ul li ul:hover{
+		color:white;
+		background-color:black;
+	}
+	ul li{
+		font-size:10px;
+	}
+	[title*="no"]{font-size:20px;}
+</style>
+</head>
+<body>
+	<h1 id="title">이지스퍼블리싱 <small>신입사원 공고</small></h1>
+	<p title=""><i>IT 기획, 편집 부서에서 함께 할 신입사원을 모집합니다.</i></p>
+	<ul class="main">
+		<li>모집 직군 : 편집 기획 부서</li>
+		<li>
+			직무 내용 : 도서 프로듀싱 업무(신입 지원 가능)
+			<ul class="sub">
+				<li>- 도서 기획, 편집</li>
+				<li>- 도서 홍보, 독자 소통</li>
+			</ul>
+		</li>
+		<li>접수 마감일 : 2016.3.6</li>
+	</ul>
+	<p title="notice"><b>자세한 내용은 공지 게시판을 참고하세요.</b></p>
+</body>
+</html>
+
+
+
+

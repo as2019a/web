@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- JavaSript Object Notation -->
+	<script>
+		var product = {
+			name:'컴퓨터',
+			price:1000,
+			getInfo:function(){
+				console.log("품명:"+this.name,"가격:"+this.price);
+			}
+		};
+		product.getInfo();
+		console.log(product.name);
+		console.log(product.price);
+		product.name = "computer";
+		product.getInfo();
+		
+		var car = {
+			model:"일렉시티-전기-저상버스",
+			menu:'현대자동차',
+			price:450000000,
+			getInfo:function(){
+				console.log("차종:"+this.name,"제작회사:"+this.menu,"구입가격:"+this.price);
+			}
+		};
+		product.getInfo();
+		console.log(product.name);
+		console.log(product.menu);
+		console.log(product.price);
+		console.log(car);
+	</script>
+</body>
+</html>

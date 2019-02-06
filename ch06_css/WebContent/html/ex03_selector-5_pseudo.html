@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h2:hover {
+	color: gray;
+}
+
+input[type="checkbox"]:checked {
+	width: 20px;
+	height: 20px;
+}
+
+input:disabled {
+	background-color: black;
+}
+
+input:enabled {
+	background-color: blue;
+}
+
+li:first-of-type {
+	color: tomato;
+}
+
+li:last-of-type {
+	color: green;
+}
+
+li:nth-of-type(5) {
+	color: gray;
+}
+
+li:nth-of-type(2n) {
+	color: orange;
+}
+/*홀수번째 li태그의 배경을 빨간색으로 변경*/
+li:nth-of-type(2n-1) {
+	background-color: red;
+}
+
+table {
+	border-collapse: collapse;
+}
+thead>tr{
+	background-color:tomato;
+	color:white;
+}
+tbody>tr:nth-of-type(2n-1) {
+	background-color: black;
+	color: white;
+}
+
+tbody>tr:hover {
+	background-color: silver;
+}
+</style>
+</head>
+<body>
+	<h2>Hello world</h2>
+	<hr />
+	<input type="checkbox" />
+	<input type="checkbox" />
+	<input type="checkbox" />
+	<hr />
+	<input type="text" />
+	<input type="text" disabled />
+	<hr />
+	<ul>
+		<li>Java</li>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JS</li>
+		<li>Oracle</li>
+		<li>JSP</li>
+		<li>Serelet</li>
+		<li>SecureCoding</li>
+		<li>Spring</li>
+	</ul>
+	<hr />
+	<!-- 실습  : 표만들기 -->
+	<table border="1">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>성별</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>송원준</td>
+				<td>남</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>김상돈</td>
+				<td>남</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>손지성</td>
+				<td>남</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>김진영</td>
+				<td>남</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>김윤호</td>
+				<td>남</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>최지은</td>
+				<td>여</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

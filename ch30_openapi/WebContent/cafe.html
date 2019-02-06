@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-sm-8 col sm-offset-2">
+    			<div class="row">
+    				<div class="col-sm-4" style="padding-right:0">
+		    			<select id="type" class="form-control">
+		    				<option value="title">제목</option>
+		    				<option value="cafename">카페이름</option>
+		    				<option value="contents">컨텐츠</option>
+		    			</select>
+    				</div>
+    				<div class="col-sm-8" style="padding-left:0">
+		    			<input type="text" class="form-control"
+		    				   onkeyup="searchCafe(event);" />
+    				</div>
+    			</div>
+    			<table class="table table-striped" id="cafes" >
+    				<thead>
+    					<tr>
+    						<th>썸네일</th>
+    						<th>카페이름</th>
+    						<th>제목</th>
+    						<th>컨텐츠</th>
+    					</tr>
+    				</thead>
+    				<tbody>
+    				
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    	function searchCafe(event){
+    		if(event.key != 'Enter'){
+    			return;
+    		}
+    		
+    		$.ajax({
+    			type:"GET",
+    			url:"https://dapi.kakao.com/v2/search/cafe",
+    			data:{query:event.target.value, target:$("#type").val()},
+    			headers:{Authorization:"KakaoAK 0566468fe1b89c32fe006037bb5a8f43"},
+    			success:function(data){
+    				//console.log(data)
+    				//console.log(`책제목은 ${data.document[0].tite}입니다`);
+    				$("#cafes>tbody").empty();
+    				for(var cafe of data.documents){
+    					$("#cafes>tbody").append(
+    						`
+    							<tr>
+    								<td>
+    									<img src=${cafe.thumbnail}>
+    								</td>
+    								<td><a href=${cafe.url}>${cafe.cafename}</a></td>
+    								<td>${cafe.title}</td>
+    								<td>${cafe.contents}</td>
+    							</tr>
+    						`	
+    					);
+    				}
+    			},error:function(error){
+    				console.log(error);
+    			}
+    		});
+    	}
+    </script>
+  </body>
+</html>

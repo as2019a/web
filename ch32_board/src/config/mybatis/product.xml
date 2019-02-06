@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+	<select id="selectListByCategory" 
+			parameterType="map"
+			resultType="Product">
+		select product.*, 
+			   (select nvl(sum(count), 0)
+			    from cart where product_model = model) cart_count
+		 from product
+		<!-- 1.안에 if문 중 하나라도 true이면 where추가 -->
+		<!-- 2.AND 또는 OR로 시작한다면 AND 또는 OR를 제거 -->
+		<where>
+			<if test="category != null"> 
+			category = #{category}
+			</if>
+			<if test="type != null">
+				AND 
+				<if test="type == 'content'">
+					content
+				</if>
+				<if test="type == 'model'">
+					model 
+				</if>
+				<if test="type == 'manufacturer'">
+					manufacturer
+				</if>
+				 like '%'||#{text}||'%'
+			</if>
+		</where>
+		<if test="order != null">
+			order by
+			<if test="order == 'price'">
+				price * (1 - discount) 
+			</if>
+			<if test="order == 'popular'">
+				cart_count ${base}
+			</if>
+			
+		</if>
+	</select>
+	
+	<select id="categoryList" resultType="String">
+		select category from category
+	</select>	
+	
+	<select id="categoryCount" resultType="int"
+			parameterType="String">
+		select count(*) from category where category = #{value}				
+	</select>
+	
+	<insert id="categoryInsert" parameterType="String">
+		insert into category values(#{value})
+	</insert>
+	
+	<select id="productCount" parameterType="String"
+		    resultType="int">
+		select count(*) from product where model = #{value}
+    </select>
+    
+    <delete id="deleteCategory" parameterType="String">
+    	delete from category where category = #{value}
+    </delete>
+    
+    <update id="updateCategory" parameterType="Map">
+    	update category set category = #{newCategory}
+    	where category = #{category}
+    </update>
+    
+    <insert id="insert" parameterType="Product">
+    	insert into product values(
+    		#{model}, #{category}, #{manufacturer}, 
+    		#{price}, #{discount}, #{image}, #{content},
+    		#{count}, sysdate
+    	)
+    </insert>
+    
+    <select id="selectOne" parameterType="String"
+    		resultType="Product">
+    	select * from product where model = #{value}
+    </select>
+	
+</mapper>
+
+
+

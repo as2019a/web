@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    	.modal-dialog.modal-sm{
+    		width: 200px;
+    		margin-left: auto;
+    		margin-right: auto;
+    	}
+    </style>
+  </head>
+  <body>
+  	<!-- 
+  		data-backdrop
+  		true(default) : 바탕 검게, 바탕 눌렀을때 종료, 
+  		false : 바탕 검게x, 바탕 눌렀을때 종료x, 
+  		static : 바탕 검게, 바탕 눌렀을때 종료x
+  	 -->
+    <button type="button" 
+    		class="btn btn-default"
+    		data-backdrop="true"
+    		onclick="showModal();">Launch Modal</button>
+	
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog modal-sm">
+		 	<div class="modal-content">
+		 		<div class="modal-header">
+		 			<button type="button"
+		 					class="close"
+		 					data-dismiss="modal">
+		 				<span>&times;</span>
+		 			</button>
+		 			<h4 class="modal-title">Modal Title</h4>
+		 		</div>
+		 		<div class="modal-body">
+		 			<p>Message : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto nostrum!</p>
+		 			<input id="input" type="text" class="form-control"/>
+		 		</div>
+		 		<div class="modal-footer">
+		 			<a href="https://www.google.com">Google</a>
+		 			<button type="button"
+		 					class="btn btn-danger"
+		 					onclick="hideModal();">Close</button>
+		 		</div>	
+		 	</div>
+		</div>
+	</div>    		
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    	function showModal(){
+    		$("#myModal").modal("show");
+    	}
+    	function hideModal(){
+    		console.log($("#input").val());
+    		$("#myModal").modal("hide");
+    	}
+    </script>
+  </body>
+</html>

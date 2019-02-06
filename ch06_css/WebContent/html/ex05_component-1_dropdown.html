@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{box-sizing: border-box;}
+	body {margin:0}
+	
+	.dropdown{
+		width:150px;
+		padding:0px;
+		list-style:none;
+	}
+	.dropdown-header{
+		background-color:#44bd32;
+		padding: 5px;
+		color: #dcdde1;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+	.dropdown-item{
+		background-color: #2ed573;
+		margin-top: 2px;
+		/*display: none;*/
+		height:0;
+		transition:0.5s;
+	}
+	.dropdown-item > a{
+		padding: 5px 10px;
+		display: block;
+		text-decoration: none;
+		color: #f1f2f6;
+		
+	}
+	.dropdown > li:nth-of-type(2) {
+		border-radius: 3px 3px 0px 0px;
+		
+	}
+	.dropdown > li:last-of-type{
+		border-radius: 0px 0px 3px 3px;
+	}
+	
+	.dropdown > li:hover {
+		opacity: 0.6;
+	}
+	.dropdown:hover > .dropdown-item{
+		/*display:block;*/
+		height:30px;
+		
+	}
+</style>
+</head>
+<body>
+	<ul class="dropdown">
+		<li class="dropdown-header">links</li>
+		<li class="dropdown-item">
+			<a href="http://www.naver.com">Naver</a>
+		</li>
+		<li class="dropdown-item">
+			<a href="http://www.google.com">Google</a>
+		</li>
+		<li class="dropdown-item">
+			<a href="http://www.daum.net">Daum</a>
+		</li>
+	</ul>
+</body>
+</html>

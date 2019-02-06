@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{box-sizing: border-box;}
+	body{margin: 0}
+	.flex-container{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.flex-container > div{
+		border: 1px solid gray;
+		/*한줄에서 공간을 차할 비율*/
+		/*flex-basis: 50%;*/
+		/*한줄의 공간이 남을 때 늘어날 비율 : flex-grow*/
+		/*한줄의 공간이 모자랄 때 축소될 비율 : flex-shirink 단, flex-wrap : nowrap인 상태에서만 가능*/
+	}
+	.flex-25{
+		flex-basis: 25%; 
+		height: 200px;
+	}
+</style>
+</head>
+<body>
+	<div class="flex-container">
+		<div style="flex-grow: 3;flex-shirink: 3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut!</div>
+		<div style="flex-grow: 2;flex-shirink: 2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+		Eos minus rerum delectus porro ducimus dolore.</div>
+		<div style="flex-grow: 1;flex-shirink: 1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+		Ab consequuntur minima inventore voluptatum reiciendis alias tempore expedita deserunt quos vel delectus voluptatibus ipsum quibusdam. Vitae?</div>
+		<div style="flex-grow: 5;flex-shirink: 5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus magni a ducimus non ea incidunt esse omnis debitis eum eaque? Alias consequuntur eos ad temporibus obcaecati incidunt impedit labore rerum.</div>
+	</div>
+	<hr />
+	<div class="flex-container">
+		<div class="flex-25">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+		<div class="flex-25">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae.</div>
+		<div class="flex-25">Lorem ipsum dolor.</div>
+		<div class="flex-25">Lorem ipsum dolor sit amet.</div>
+		<div class="flex-25">Lorem ipsum dolor sit amet.</div>
+		<div class="flex-25">Lorem ipsum dolor sit amet.</div>
+		<div class="flex-25">Lorem ipsum dolor sit amet.</div>
+		<div class="flex-25">Lorem ipsum dolor sit amet.</div>
+	</div>
+	<hr />
+</body>
+</html>

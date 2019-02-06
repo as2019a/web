@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input{
+		width:243px;
+		text-align: right;
+		padding-right: 10px;
+	}
+	
+	button{
+		margin-top:5px;
+		width:60px;
+		height:30px;
+	}
+</style>
+</head>
+<body>
+	<input type="text" id="display" readonly />
+	<br />
+	<button onclick="add(event)">7</button>
+	<button onclick="add(event)">8</button>
+	<button onclick="add(event)">9</button>
+	<button onclick="add(event)">/</button>
+	<br />
+	<button onclick="add(event)">4</button>
+	<button onclick="add(event)">5</button>
+	<button onclick="add(event)">6</button>
+	<button onclick="add(event)">*</button>
+	<br />
+	<button onclick="add(event)">1</button>
+	<button onclick="add(event)">2</button>
+	<button onclick="add(event)">3</button>
+	<button onclick="add(event)">-</button>
+	<br />
+	<button onclick="add(event)">0</button>
+	<button onclick="clean()">C</button>
+	<button onclick="compute()">=</button>
+	<button onclick="add(event)">+</button>
+	<script>
+		var display = document.querySelector("#display");
+		function add(){
+			display.value += event.target.innerHTML;
+		}
+		function compute(){
+			try{
+				display.value = eval(display.value);
+			}catch(e){
+				console.error(e);
+				alert("잘못된 수식입니다");
+				display.value = "";
+			}
+		}
+		function clean(){
+			display.value = "";
+		}
+	</script>
+</body>
+</html>

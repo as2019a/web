@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <form action="">
+    	<input type="text" name="title"/>
+    	<button type="button" onclick="check(this.form);">확인</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    	function check(f){
+    		//핸드폰번호
+    		var pattern = /^01[01679]-\d{4}-\d{4}$/;
+    		//날짜 1991-04-31
+    		var pattern = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+    		//집 전화번호(02-844-1833) -> '적합'
+    		var pattern = /^\d{2,3}-\d{3,4}-\d{4}$/;
+    		//이메일
+    		//ex){알파벳 또는 숫자 4~10}@{알파벳소문자 3~9}.{com|co.kr|net}
+    		// as2006a@naver.com -> '적합'
+    		var pattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+    		
+    		
+    		if(pattern.test(f.title.value) && f.title.value != '-0'){
+    			alert("적합");
+    		}else{
+    			alert("부적합");
+    		}
+    		
+    	}
+    </script>
+  </body>
+</html>

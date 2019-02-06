@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{box-sizing: border-box;}
+	#area{
+		width:300px;
+		height:300px;
+		padding: 10px;
+		border: 1px solid black;
+		border-radius: 20px;
+	}
+	#input{
+		padding: 10px 5px;
+		width:300px;
+		border-radius: 10px;
+		border: 1px solid black;
+		margin-top: 10px;
+	}
+</style>
+</head>
+<body>
+	<div id="area"></div>
+	<input type="text" id="input" />
+	<script>
+		var input = document.querySelector("#input");
+		//출력가능한 문자가 아니어도 이벤트로 인식(ctrl, shift, F1)
+		//단 특수키(window, fn, 한/영)는 제외
+		input.onkeydown = function(event){
+			//console.log("down");
+			//console.log(event.key);
+			if(event.key == 'Enter'){
+				area.innerHTML += input.value + "<br>";
+				input.value = "";
+			}
+		}
+		//출력가능한 문자만 인식
+		input.onkeypress = function(){
+			//console.log("press");
+		}
+		
+		input.onkeyup = function(){
+			input.value = input.value.toUpperCase();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{box-sizing: border-box;}
+	body{margin: 0}
+	div{border: 1px solid gray; height: 100px;
+	overflow:hidden; text-overflow: ellipsis;}
+	.flex-container{
+		border: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	[class^="flex-col-"]{
+		padding: 0 15px;
+	}
+	.flex-col-1{flex:0 0 8.333333%;}
+	.flex-col-2{flex:0 0 16.666666%;}
+	.flex-col-3{flex:0 0 25%;}
+	.flex-col-4{flex:0 0 33.333333%;}
+	.flex-col-5{flex:0 0 41.666666%;}
+	.flex-col-6{flex:0 0 50%;}
+	.flex-col-7{flex:0 0 58.333333%;}
+	.flex-col-8{flex:0 0 66.333333%;}
+	.flex-col-9{flex:0 0 75%;}
+	.flex-col-10{flex:0 0 83.333333%;}
+	.flex-col-11{flex:0 0 91.666666%;}
+	.flex-col-12{flex:0 0 100%;}
+	
+	.flex-align-center{
+		justify-content: center;
+	}
+	.flex-align-right{
+		justify-content: flex-end;
+	}
+	.flex-align-around{
+		justify-content: space-around;
+	}
+	.flex-align-between{
+		justify-content: space-between;
+	}
+</style>
+</head>
+<body>
+	<div class="flex-container">
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+		<div class="flex-col-1"></div>
+	</div>
+	<hr />
+	<div class="flex-container">
+		<div class="flex-col-2"></div>
+		<div class="flex-col-2"></div>
+		<div class="flex-col-4"></div>
+		<div class="flex-col-4"></div>
+	</div>
+	<hr />
+	<div class="flex-container">
+		<div class="flex-col-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae facere reprehenderit quia rem porro blanditiis quasi voluptas dolorum maiores tempora.</div>
+		<div class="flex-col-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus reiciendis ex commodi amet tempora quod culpa facere minima doloremque cupiditate dolores aut maxime consectetur itaque voluptas veritatis saepe nisi quae!</div>
+	</div>
+	<hr />
+	<div class="flex-container flex-align-between">
+		<div class="flex-col-3"></div>
+		<div class="flex-col-3"></div>
+		<div class="flex-col-3"></div>
+	</div>
+</body>
+</html>

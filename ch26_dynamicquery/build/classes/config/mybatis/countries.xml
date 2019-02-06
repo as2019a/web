@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="countries">
+	
+	<select id="selectList" resultMap="locationMap"
+							parameterType="HashMap">
+		select * from countries
+		<if test="name != null">
+			where country_name like '%'||#{value}||'%'
+		</if>
+		<if test="idList != null">
+			where country_id in 
+			<foreach item="id" collection="idList"
+						open="(" separator="," close=")">
+				#{id}
+			</foreach>
+		</if>
+	</select>
+	
+	<resultMap id="locationMap" type="Country">
+		<result property="country_id" 
+				column="country_id"/>
+		<collection property="location_list"
+					ofType="Location"
+					column="country_id"
+					select="locations.selectListByCountry"/>
+	</resultMap>
+	
+</mapper>

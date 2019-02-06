@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.active{
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<h1 id="title">애국가</h1>
+	<h2 id="subtitle"><span class="active">1절</span> ~ 2절</h2>
+	<p>동해물과 백두산이</p>
+	<p>마르고 닮도록</p>
+	<p>하느님이 보우하사</p>
+	<p>우리나라 만세</p>
+	<button type="button" onclick="change(1);">1절</button>
+	<button type="button" onclick="change(2);">2절</button>
+	<script>
+		var subtitle = 
+			document.querySelector("#subtitle");
+		//innerHTML-HTML을 보존한다.
+		console.log(subtitle.innerHTML);
+		//innerText-HTML을 무시한다.
+		console.log(subtitle.innerText);
+		
+		var song1 = ["동해물과 백두산이", "마르고 닳도록",
+			         "하느님이 보우하사", "우리나라 만세"];
+		var song2 = ["남산위에 저 소나무", "철갑을 두른듯",
+					 "바람서리 불변함은", "우리 기상일세"];
+		
+		var songs = [song1, song2];
+		
+		function change(verse){
+			if(verse == 2){
+				subtitle.innerHTML = 
+					"1절 ~ <span class='active'>2절</span>";
+			}else{
+				subtitle.innerHTML = 
+					"<span class='active'>1절</span> ~ 2절";
+			}
+			
+			var pTags = document.querySelectorAll("p");
+			for(var i in pTags){
+				pTags[i].innerText = songs[verse-1][i];
+			}
+		}
+	
+	</script>
+</body>
+</html>

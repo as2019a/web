@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <style>
+    	h1{
+    		margin: 5px;
+    		background-color: #1289A7;
+    		padding: 20px;
+    	}
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center bg-primary text-info">Summernote</h1>
+    <textarea id="content" class="form-control"></textarea>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/lang/summernote-ko-KR.min.js"></script>
+    <script>
+    	$("#content").summernote({
+    		height:300,
+    		focus: true,
+    		disableResizeEditor:true,
+    		lang:'ko-KR',
+    		callbacks:{
+    			onImageUpload:sendFile,
+    			onMediaDelete:deleteFile
+    		}
+    	});
+    	
+    	function deleteFile(target){
+    		//console.log(target);
+    		var src = target[0].src.substring(21);
+    		console.log("src",src);
+    		$.ajax({
+    			url:"/filedelete",
+    			type:"post",
+    			data:{src:src},
+    			success:function(data){
+    				console.log(data);
+    			}
+    		});
+    	}
+    	
+    	function sendFile(files, editor, welEditable){
+    		//console.log(files[0]);
+    		var data = new FormData();
+    		data.append('upload', files[0]);
+    		
+    		$.ajax({
+    			url:"/fileupload",
+    			contentType:false,
+    			processData:false,
+    			data:data,
+    			type:"post",
+    			success:function(data){
+    				//console.log(data);
+    				$("#content").summernote(
+    						'editor.insertImage', data.url);
+    			},error:function(error){
+    				console.error(error);
+    			}
+    		})
+    	}
+    	
+    </script>
+  </body>
+</html>

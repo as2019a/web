@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		height: 100vh;
+		margin: 0;
+	}
+	#box{
+		width: 250px;
+		height: 250px;
+		background-color:tomato;
+	}
+</style>
+<script>
+	/* window.onload = function(){
+		
+	} */
+	/* $(document).ready(function(){
+		
+	}); */
+	/* $(function(){
+		
+	}); */
+	/* $({
+		
+	}); */
+</script>
+</head>
+<body>
+	<div id="box"></div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$("#box").on("click", function(){
+			//box의 width를 1초에걸쳐서 100px로 줄여라
+			$("#box").animate({width:"100px"}, 1000);
+		});
+		//더블클릭 됬을 때 height을 0.5초에 걸쳐서 100px로 줄여라
+		/* $("#box").dblclick(function(){
+			$("#box").animate({height:"100px"}, 500);
+		}); */
+		
+		/* $("body").mousemove(function(event){
+			//console.log(event.clientX, event.clientY);
+			$("#box").css({width:event.clientX+"px",
+						   height:event.clientY+"px"});
+		}) */
+		
+		//마우스가 진입했을 때 투명도를 0.5(1초)
+		$("#box").mouseover(function(){
+			$("#box").animate({opacity:0.5}, 1000);
+		});
+		//마우스가 나갔을때 투명도를 1(1초)
+		$("#box").mouseout(function(){
+			$("#box").animate({opacity:1}, 1000);
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*Spacing(띄어쓰기) : 자손선택자*/
+	ul ul{
+		list-style-type:square;
+	}
+	/*> : 자식선택자*/
+	ul ul > li{color:tomato;}
+	
+	.Lang-type > li{text-indent:-5px}
+	.Lang-type{
+		padding-left:15px;
+	}
+</style>
+</head>
+<body>
+	<h2>Type of language</h2>
+	<ul class="Lang-type">
+		<li>
+			Programing Language
+			<ul class="Long-List">
+				<li>Java</li>
+				<li>JS</li>
+				<li>Python</li>
+			</ul>
+		</li>
+		<li>
+			Markup Language
+			<ul class="Long-List">
+				<li>HTML</li>
+				<li>XML</li>
+			</ul>
+		</li>
+		<li>
+			Structured Query Language 
+			<ul class="Long-List">
+				<li>Oracle</li>
+				<li>Mysql</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

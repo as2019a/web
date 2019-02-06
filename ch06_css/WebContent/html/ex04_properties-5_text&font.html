@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{
+		box-sizing:border-box;
+	}
+	body {
+		margin:0;
+	}
+	h1{
+		text-align:center;
+		/* x좌표, y좌표, 번짐, 색깔 */
+		text-shadow: 3px 3px 5px black;
+		font-family: 'charmonan',cursive;
+		font-size: 5vw;
+	}
+	p{
+		width:500px;
+		/*margin-left:auto;
+		margin-right:auto;*/
+		margin: 5px auto;
+	}
+	p:nth-of-type(2){
+		/* p -> pre */
+		white-space: normal; /* default */
+		white-space: pre-line;
+	}
+	p:nth-of-type(3){
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: clip; /* default */
+		text-overflow: ellipsis; /* 생략  */
+		text-decoration: underline;
+		text-indent: 20px;
+		
+	}
+	li:nth-of-type(2) {
+		font-family: "open sans", "맑은고딕";
+	}
+	li:nth-of-type(3) {
+		/* 웹폰트 */
+		font-family: 'Raleway' sans-serif;
+		font-size: 30px;
+		font-weight: lighter;
+		font-style: oblique;
+	}
+</style>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+	
+	Dolores mollitia nemo in voluptate rerum ipsum vel sapiente commodi magni cum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+	
+	Dolores mollitia nemo in voluptate rerum ipsum vel sapiente commodi magni cum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+	
+	Dolores mollitia nemo in voluptate rerum ipsum vel sapiente commodi magni cum.</p>
+	
+	<ul>
+		<li>Java, 자바</li>
+		<li>HTML, 에이치티엠엘</li>
+		<li>CSS, 씨에스에스</li>
+		<li>JS, 자바스크립트</li>
+		<li>Servlet, 서블릿</li>
+	</ul>
+</body>
+</html>

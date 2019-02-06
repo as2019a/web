@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <style>
+    	body{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+    	.text-center{
+    		margin: 3px;
+    		padding: 12px;
+    		background-color: #d35400;
+    		color: #778ca3;
+    	}
+    </style>
+  </head>
+  <body>
+  	<h2 class="text-center">Hello</h2>
+    <a href="/hello?name=LYS">hello</a>
+    <button type="button" onclick="hello();">hello</button>
+    <form action="/hello" method="post">
+    	<input type="text" name="name" value="LYS"/>
+    	<button type="submit">전송</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    	function hello(){
+    		var check = confirm("이동할까요?");
+    		if(check){
+	    		location.href='/hello?name=LYS';
+    		}
+    		
+    	}
+    </script>
+  </body>
+</html>

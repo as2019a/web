@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="score">
+	<select id="selectList" resultType="Score">
+		select * from score
+	</select>
+	
+	<delete id="delete" parameterType="int"> <!-- ScoreDao.session.delete("score.delete", id); -->
+	<!-- id는 delete, parameterType는 int(숫자) -->
+		delete from score where id = #{value} <!-- SQL : Score(List) 전체에서 id=#{value} 1행 삭제 -->
+	</delete>
+	
+	<select id="selectOne" parameterType="int" resultType="Score">
+		select * from score where id = #{value}
+	</select>
+	
+	<update id="update" parameterType="Score">
+		update score set writer=#{writer}, name=#{name}, kor=#{kor}, eng=#{eng}, math=#{math}
+		where id = #{id}
+	</update>
+	
+	<insert id="insert" parameterType="Score">
+		insert into score values(seq_score_id.nextval, #{name}, #{kor}, #{eng}, #{math}, #{total}, #{average})
+	</insert>
+</mapper>

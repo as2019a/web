@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <style>
+	div{
+		width: 800px;
+		height: 600px;
+	}
+</style> -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<h3 id="h3_1">저는 h3_1입니다</h3>
+			<h3 id="h3_2">저는 h3_2입니다</h3>
+			<h3 id="h3_3">저는 h3_3입니다</h3>
+			<h3 id="h3_4">저는 h3_4입니다</h3>
+		</div>
+		<div class="content">
+			<p id="p1">저는 p1입니다.</p>
+			<p id="p2">저는 p2입니다.</p>
+			<p id="p3">저는 p3입니다.</p>
+			<p id="p4">저는 p4입니다.</p>
+		</div>
+		<div class="footer">
+			<table id="myTable">
+				<tr>
+					<th>컬럼명1</th>
+					<th>컬럼명2</th>
+					<th>컬럼명3</th>
+					<th>컬럼명4</th>
+				</tr>
+				<tr>
+					<td>1번</td>
+					<td>2번</td>
+					<td>3번</td>
+					<td>4번</td>
+				</tr>
+				<tr>
+					<td>5번</td>
+					<td>6번</td>
+					<td>7번</td>
+					<td>8번</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script>
+		//다음 요구사항을 jQuery선택자와 함수들을 사용해서 처리하시오.
+		//1 - 클래스가 main인 div의 width를 800, height을 600으로 지정 - style로 지정
+		$(".main").css({width:"800px" , height:"600px"});
+		//2 - main클래스 안에 존재하는 3개의 div태그들의 height을 33.33%로 지정
+		$(".main div").css("height", "33.33%");
+		//3 - 아이디가 p2인 태그의 글씨색을 초록색으로 변경
+		$("#p2").css("color","green");
+		//4 - 모든 th태그의 배경을 회색으로 변경하고 글씨색을 하얀색으로 변경
+		$("th").css({backgroundColor:"gray", color:"white"});
+		//5 - 모든 td태그의 글씨정렬을 가운데 맞춤으로 변경 
+		$("td").css("textAlign", "center");
+		//6 - 5번~8번라인 밑에 9번 ~ 12번에 해당하는 라인추가
+		var $tr = $("<tr>");
+		$tr.append($("<td>").text("9번"));
+		$tr.append($("<td>").text("10번"));
+		$tr.append($("<td>").text("11번"));
+		$tr.append($("<td>").text("12번"));
+		$("#myTable").append($tr);
+	</script>
+</body>
+</html>

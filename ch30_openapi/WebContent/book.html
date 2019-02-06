@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-sm-8 col sm-offset-2">
+    			<div class="row">
+    				<div class="col-sm-4" style="padding-right:0">
+		    			<select id="type" class="form-control">
+		    				<option value="title">제목</option>
+		    				<option value="person">작가</option>
+		    				<option value="publisher">출판사</option>
+		    			</select>
+    				</div>
+    				<div class="col-sm-8" style="padding-left:0">
+		    			<input type="text" class="form-control"
+		    				   onkeyup="searchBook(event);" />
+    				</div>
+    			</div>
+    			<table class="table table-striped" id="books" >
+    				<thead>
+    					<tr>
+    						<th>썸네일</th>
+    						<th>제목</th>
+    						<th>가격</th>
+    						<th>할인가격</th>
+    						<th>저자</th>
+    					</tr>
+    				</thead>
+    				<tbody>
+    				
+    				</tbody>
+    			</table>
+    		</div>
+    	</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    	function searchBook(event){
+    		if(event.key != 'Enter'){
+    			return;
+    		}
+    		
+    		$.ajax({
+    			type:"GET",
+    			url:"https://dapi.kakao.com/v3/search/book",
+    			data:{query:event.target.value, target:$("#type").val()},
+    			headers:{Authorization:"KakaoAK 0566468fe1b89c32fe006037bb5a8f43"},
+    			success:function(data){
+    				//console.log(data)
+    				//console.log(`책제목은 ${data.document[0].tite}입니다`);
+    				$("#books>tbody").empty();
+    				for(var book of data.documents){
+    					$("#books>tbody").append(
+    						`
+    							<tr>
+    								<td>
+    									<img src=${book.thumbnail}>
+    								</td>
+    								<td>${book.title}</td>
+    								<td>${book.price}</td>
+    								<td>${book.sale_price}</td>
+    								<td>${book.authors[0]}</td>
+    							</tr>
+    						`	
+    					);
+    				}
+    			},error:function(error){
+    				console.log(error);
+    			}
+    		});
+    	}
+    </script>
+  </body>
+</html>

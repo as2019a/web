@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="/parameter?msg=메세지&number=100&city=서울&city=부산">send</a>
+	<hr />
+	<input type="text" id="msg" placeholder="msg" /><br />
+	<input type="text" id="number" placeholder="number" /><br />
+	<input type="text" id="city1" placeholder="city1" /><br />
+	<input type="text" id="city2" placeholder="city2" /><br />
+	<button type="button" onclick="send();">전송</button>
+	<hr />
+	<form action="/parameter">
+		<input type="text" name="msg" placeholder="msg" /><br />
+		<input type="text" name="number" placeholder="number" /><br />
+		<input type="text" name="city" placeholder="city1" /><br />
+		<input type="text" name="city" placeholder="city2" /><br />
+		<button type="submit">send</button>
+	</form>
+	<hr />
+	<form action="/signup">
+		<button type="submit">post</button>
+	</form>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		function send(){
+			location.href = "/parameter?msg="+$("#msg").val()+
+							"&number="+$("#number").val()+
+							"&city="+$("#city1").val()+
+							"&city="+$("#city2").val();
+		}
+	</script>
+</body>
+</html>

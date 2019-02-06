@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button type="button" 
+			onclick="clearInterval(watch);">
+			STOP Watch</button>
+	<button type="button" 
+			onclick="startTimer();">Start</button>
+	<button type="button" 
+			onclick="clearInterval(timer);">Stop</button>
+	<button type="button" 
+			onclick="order(timer);">Order</button>
+	<script>
+		var name = '';
+		while(name.length == 0){
+			name = prompt("당신의 이름을 알려주세요");	
+		}
+		
+		alert(name.length+"글자의 이름이군요~!");
+		var check = confirm("계속 진행하시겠습니까?");
+		if(check){
+			console.log('true');
+		}else{
+			console.log('false');
+		}
+		
+		//일정 시간마다 함수를 호출
+		/*var watch = setInterval(function(){
+			console.log(Date());
+		},1000);*/
+		
+		var timer;
+		var time = 10;
+		function startTimer(){
+			timer = setInterval(function(){
+				console.log(time);
+				time--;
+				if(time == -1){
+					clearInterval(timer);
+				}
+			},1000);
+		}
+		
+		function order(){
+			setTimeout(function(){
+				
+			},5000);
+		}
+	</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employees">
+  <select id="selectList" resultMap="employeeListMap">
+  	select * from departments
+  </select>
+  <resultMap id="employeeListMap" type="Employee">
+   	<!-- resultMap은 부가적인 부가적인 역할(마무리작업)을 한다 -->
+   	<result column="employee_id" property="employeeId"/> 
+   	<result column="first_name" property="firstName"/>
+   	<!-- 1:1 -->
+   	<association property="department" 
+   				javaType="Department"
+   				column="department_id"
+   				select="departments.selectOne"/>
+   	<!-- association property,javaType,column,select -->
+  </resultMap> <!-- 부서 파라미터를 위로 처리 -->
+  <!-- association -> select 요청 처리 -->
+  <!-- 구원요청/select 데이터를 위로 처리 -->
+  
+  <select id="selectListByDepartment" 
+			parameterType="int"
+			resultMap="employeeNameMap2">
+		select * from employees 
+		where department_id = #{value}		
+	</select>
+	
+	<resultMap id="employeeNameMap2"  type="Employee">
+		<result property="employeeId" column="employee_id"/>
+		<result property="firstName" column="first_name"/>
+	</resultMap>
+</mapper>

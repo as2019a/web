@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Location</h1>
+	<button type="button" onclick="moveTo();">이동</button>
+	<a href="http://www.google.com">이동</a>
+	<script>
+		function moveTo(){
+			//location.href='https://www.naver.com';
+			location.replace('ex03_history1.html');
+		}
+		//이 페이지에 들어왔을 경우 5초 뒤에 자동으로
+		//http://www.increpas.com으로 이동하게 제작
+		setTimeout(function(){
+			location.href="http://www.increpas.com";
+		},5000);	
+	</script>
+</body>
+</html>

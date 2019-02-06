@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Website</title>
+<link rel="stylesheet" href="/css/inc.css" />
+<style>
+	.header{
+		background-image: 
+			url("https://placeimg.com/1200/202/any");
+	}
+	
+	.header > h1{
+		font-size:50px;
+		margin:0;
+		padding:25px;
+	}
+	
+	.footer{
+		background-color:black;
+		color:white;
+		padding:10px;
+	}
+	
+	.content{
+		background-color: #ddd;
+	}
+	
+	.article, .aside{
+		background-color: white;
+		padding: 20px;
+		margin-top:20px;
+		margin-bottom:20px;
+		border-radius: 5px;
+		box-shadow: 3px 3px 10px gray;
+		word-break:break-all;
+	}
+	
+	.navbar{
+		background-color: black;
+		margin-top:20px;
+	}
+	
+	.navitem > a{
+		display:block;
+		height:40px;
+		color:white;
+		text-decoration: none;
+		line-height: 40px;
+	}
+	.navitem:hover{
+		background-color: gray;
+	}
+	
+	.img-block{
+		display: block;
+		width:100%;
+		margin-bottom:3px;
+	}
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1 class="text-center">My Website</h1>
+		<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+		<div class="flex-container navbar text-center">
+			<div class="flex-col-2 flex-col-md-1">
+				<div class="navitem">
+					<a href="">Home</a>
+				</div>
+			</div>
+			<div class="flex-col-2 flex-col-md-1">
+				<div class="navitem">
+					<a href="">Friends</a>
+				</div>
+			</div>
+			<div class="flex-col-2 flex-col-md-1">
+				<div class="navitem">
+					<a href="">Vlog</a>
+				</div>
+			</div>
+			<div class="flex-col-1 flex-col-md-1">
+				<div class="navitem">
+					<a href="">Etc</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content flex-container">
+		<div class="flex-col-9">
+			<div class="article">
+				<h2>Title Heading</h2>
+				<p>Title description, Dec 7, 2018</p>
+				<img src="https://placeimg.com/1000/300/any" 
+					 alt="Dummy image"
+					 class="img-block" />
+				<p>some text</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic distinctio expedita nihil blanditiis velit nesciunt eos aliquid laborum ipsa consequatur!</p>
+			</div>
+			<div class="article">
+				<h2>Title Heading</h2>
+				<p>Title description, Dec 7, 2018</p>
+				<img src="https://placeimg.com/1000/300/cloth" 
+					 alt="Dummy image"
+					 class="img-block" />
+				<p>some text</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic distinctio expedita nihil blanditiis velit nesciunt eos aliquid laborum ipsa consequatur!</p>
+			</div>
+		</div>
+		<div class="flex-col-3">
+			<div class="flex-vertical-container">
+				<div class="aside">
+					<h2>About Me</h2>
+					<img src="https://placeimg.com/300/120/any" 
+						 alt="Dummy image"
+						 class="img-block" />
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe officia ex vel facere quae laborum.</p>
+				</div>
+				<div class="aside">
+					<h2>Popu Post</h2>
+					<img src="https://placeimg.com/300/121/any" 
+						 alt="Dummy image"
+						 class="img-block" />
+					<img src="https://placeimg.com/300/122/any" 
+						 alt="Dummy image"
+						 class="img-block" />
+					<img src="https://placeimg.com/300/123/any" 
+						 alt="Dummy image"
+						 class="img-block" />
+				</div>
+				<div class="aside flex-grow-up">
+					<h2>Follow Me</h2>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<div class="footer text-center">
+		<h2>Footer</h2>
+	</div>
+</body>
+</html>
+
+
+
+

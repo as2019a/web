@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="msg1" class="msg" title="hello">Hello World</p>
+	<p id="msg2" class="msg" title="welcome">Welcome to programing world<br></p>
+	
+	<ul id="subjects">
+		<li>Java</li>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JS</li>
+	</ul>
+	<script>
+		//1.id속성으로 태그에 접근(태그 한개 선택)
+		var msg1 = document.getElementById("msg1");
+		console.log(msg1);
+		console.log(msg1.id);
+		console.log(msg1.className);
+		console.log(msg1.title);
+		
+		var msg2 = document.getElementById("msg2");
+		//alert(msg2.title);
+		console.log(msg2.innerHTML);
+		console.log(msg2.innerText);
+		
+		//2.선택자를 이용해서 태그에 접근
+		//태그하나
+		var p1 = document.querySelector(".msg");
+		console.log(p1);
+		//태그들(배열)
+		var pArray1 = document.querySelectorAll(".msg");
+		console.log(pArray1);
+		console.log(pArray1[1]);
+		
+		console.log('--------------------------------');
+		//자식 및 부모 태그 선택
+		var subjects = document.querySelector("#subjects");
+		var subjectsArr = subjects.children;
+		console.log(subjectsArr.length);
+		for(var subjects of subjectsArr){
+			console.log(subjects.innerText);
+		}
+		console.log(subjects.parentElement);
+		console.log(subjects.parentElement == document.querySelector("body"));
+	</script>
+</body>
+</html>

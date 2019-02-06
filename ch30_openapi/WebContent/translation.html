@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    	#text, .result{ min-height:300px;}
+    	.result{
+    		border: 1px solid #ddd;
+    		border-radius: 4px;
+    		padding:10px;
+    	}
+    </style>
+  </head>
+  <body>
+    <div class="conatiner">
+    	<div class="row">
+    		<div class="col-sm-4 col-sm-offset-2">
+    			<select id="source" class="form-control">
+    				<option value="ko">한국어</option>
+    				<option value="en">영어</option>
+    				<option value="ja">일본어</option>
+    				<option value="zh-CN">중국어</option>
+    			</select>
+    		</div>
+    		<div class="col-sm-4">
+    			<select id="target" class="form-control">
+    				<option value="ko">한국어</option>
+    				<option value="en">영어</option>
+    				<option value="ja">일본어</option>
+    				<option value="zh-CN">중국어</option>
+    			</select>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-sm-4 col-sm-offset-2">
+    			<textarea name="" id="text" class="form-control"></textarea>
+    		</div>
+    		<div class="col-sm-4">
+    			<div class="result" id="result"></div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-sm-8 col-sm-offset-2">
+    			<button type="button" 
+    				class="btn btn-default btn-block"
+    				onclick="trans();">번역</button>
+    		</div>
+    	</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    	function trans(){
+    		//1.소스언어, 2.타겟언어, 3.번역할 문장
+    		$.ajax({
+    			type:"post",
+    			url:"/translate",
+    			data:{
+    					source:$("#source").val(),
+    					target:$("#target").val(),
+    					text:$("#text").val()
+  				},success:function(data){
+  					//console.log(data);
+  					$("#result").text(
+						data.message.result.translatedText);
+  				},error:function(error){
+  					console.error(error);
+  				}
+    		
+    		});
+    	}
+    </script>
+  </body>
+</html>

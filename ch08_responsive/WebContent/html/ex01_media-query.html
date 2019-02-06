@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/inc.css" />
+<style>
+	#test{
+		color:red;
+	}
+	
+	@media screen and (max-width:500px){
+		#test{
+			color:blue;
+		}
+	}
+	
+	@media screen and (min-width:700px) 
+				  and (max-width:800px){
+	  	#test{
+	  		color:green;
+	  	}
+  	}
+  	div{
+  		box-sizing: border-box;
+  		border:1px solid gray;
+  		width:50%;
+  		height:100px;
+  		float:left;
+  	}
+  	
+  	@media screen and (max-width:500px){
+  		div{
+  			width:100%;
+  			height:200px;
+  		}
+  	}
+	
+</style>
+</head>
+<body>
+	<h1 id="test">Hello world</h1>
+	<hr />
+	<div></div>
+	<div></div>
+</body>
+</html>

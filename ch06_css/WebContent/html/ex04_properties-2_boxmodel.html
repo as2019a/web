@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		margin:0;
+	}
+	div{
+		width:200px;
+		height:200px;
+		/*200x200*/
+		
+		/*내부여백*/
+		padding: 20px;
+		/*240x240*/
+		
+		/*테두리*/
+		border-width: 10px ;
+		border-style: solid;
+		border-color: purple;
+		/*260x260*/
+		
+		/*외부간격*/
+		margin:5px;
+		
+		/*표준 box-sizing : 계산하기 불편*/
+		/*box-sizing:content-box;*/
+		/*비표준 : 계산하기 편함*/
+		box-sizing:border-box;
+		
+		display:inline-block;
+		
+				
+	}
+	
+</style>
+</head>
+<body>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae velit.</div><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae velit.</div><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae velit.</div><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae velit.</div>
+</body>
+</html>

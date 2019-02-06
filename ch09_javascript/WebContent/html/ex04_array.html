@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var cityArray = ["서울","대전","대구","부산"];
+		console.log(cityArray);
+		console.log(cityArray[0]);
+		console.log(cityArray[4]);
+		cityArray[4] = "인천";
+		console.log(cityArray[4]);
+		cityArray.push("영등포");
+		console.log(cityArray[5]);
+		console.log(cityArray.pop());
+		console.log(cityArray);
+		console.log('-------------------------------');
+		for(var i = 0; i < cityArray.length; i++ ){
+			console.log(cityArray[i]);
+		}
+		console.log('-------------------------------');
+		for(var city of cityArray){
+			console.log(city);
+		}
+		console.log('-------------------------------');
+		for(var i in cityArray){
+			console.log(cityArray[i]);
+		}
+		console.log('-------------------------------');
+		//5단을 출력하세요.(자바스크립트 for문으로 작성)
+		for(var i = 1; i < 10; i++){
+			console.log(5*i);
+		}
+		console.log('-------------------------------');
+		//100단을 출력하세요.
+		for(var i = 1; i < 101; i++){
+			console.log(100*i);
+		}
+		console.log('-------------------------------');
+		//9단을 출력하세요.
+		for(var i = 1; i < 10; i++){
+			console.log(9*i);
+		}
+		console.log('-------------------------------');
+	</script>
+</body>
+</html>

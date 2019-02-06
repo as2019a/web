@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>동해물과 백두산이</p>
+	<p>마르고 닮도록</p>
+	<p>하느님이 보우하사</p>
+	<p>우리나라 만세</p>
+	<input type="color" id="color" onchange="changeColor()" />
+	<button type="button" onclick="changeColor();">색변경</button>
+	<input type="range" id="size" min="10" max="100" value="16" onchange="changeSize()" />
+	<button type="button" onclick="changeSize();">크기변경</button>
+	<script>
+		function changeColor(){
+			var color = document.querySelector("#color").value;
+			console.log(color);
+			var pTags = document.querySelectorAll("p");
+			for(var pTag of pTags){
+				//pTag.style = "color:"+color;
+				pTag.style.color = color;
+			}
+		}
+		
+		function changeSize(){
+			var size = document.querySelector("#size").value;
+			console.log(size);
+			var pTags =  document.querySelectorAll("p");
+			for(var pTag of pTags){
+				pTag.style.fontSize = size +"px";
+			}
+		}
+	</script>
+</body>
+</html>

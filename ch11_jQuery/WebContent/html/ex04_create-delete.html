@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<select id="food">
+		<option value="">::선택::</option>
+	</select>
+	<br />
+	<input type="text" id="input"/>
+	<button type="button" onclick="add();">추가</button>
+	<button type="button" onclick="del();">삭제</button>
+	<button type="button" onclick="deleteAll();">전체삭제</button>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		function add(){
+			//attr() -> element의 속성값
+			//var inputStr = $("#input").attr("value");
+			//prop() -> js object의 properties
+			//var inputStr = $("#input").prop("value");
+			var inputStr = $("#input").val();
+			var $option = $("<option>");
+			$option.text(inputStr);
+			//$("#food").append($option);
+			$("#food").prepend($option);
+			$("#input").val("");
+		}
+		
+		function del(){
+			var inputStr = $("#input").val();
+			for(var option of $("#food>option")){
+				if($(option).text() == inputStr){
+					$(option).remove();
+					$("#input").val("");
+					return;
+				}
+			}
+		}
+		
+		function deleteAll(){
+			//$("#food").html("");
+			$("#food").empty();
+			//select태그에 ::선택::옵션태그 추가하시오.
+			var $option = $("<option>");
+			$option.text("::선택::");
+			$("#food").append(
+				$("<option>").text("::선택::")
+			);
+		}
+	</script>
+</body>
+</html>
+
+

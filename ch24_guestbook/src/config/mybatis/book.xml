@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="book">
+	<select id="selectList" resultType="Book" parameterType="HashMap">
+  	select * from guestbook
+  </select>
+  <select id="selectListCondition" resultType="Book" parameterType="HashMap">
+  	select * from guestbook
+  	where ${type} like '%'||#{word}||'%'
+  </select>
+  <delete id="delete" parameterType="int">
+  	delete from guestbook where id = #{value}
+  </delete>
+  <select id="selectOne" parameterType="int" resultType="Book">
+  	select * from guestbook where id = #{value}
+  </select>
+  <update id="update" parameterType="Book">
+  	update guestbook set writer=#{writer}, msg=#{msg}, writedate = systimestamp
+  	where id = #{id}
+  </update>
+  <insert id="insert" parameterType="Book">
+  	insert into guestbook values(seq_guestbook_id.nextval, #{password}, #{writer}, #{ip}, #{msg}, systimestamp)
+  </insert>
+</mapper>

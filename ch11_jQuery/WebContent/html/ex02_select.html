@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="msg1" class="msg" title="hello">Hello World</p>
+	<p id="msg2" class="msg" title="welcome">Welcome to programing world</p>
+	<ul id="subjects">
+		<li><a href="">Java</a></li>
+		<li><a href="">HTML</a></li>
+		<li><a href="">CSS</a></li>
+		<li><a href="">JS</a></li>
+	</ul>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		//선택자를 사용한 엘리먼트 선택
+		var msg1 = document.querySelector("#msg1");
+		var $msg1 = $("#msg1");
+		console.log("js object", msg1);
+		console.log("jQuery object", $msg1);
+		
+		//jQuery객체는 모두 배열
+		console.log(msg1 == $msg1[0]);
+		
+		//속성접근
+		console.log(msg1.title, $msg1.attr("title"));
+		//속성을 가져올 때는 첫번째 태그(0번지)의 속성을 가져옵니다.
+		//var $msgs = $(".msg");
+		console.log($(".msg1").attr("title"));
+		
+		//여러 태그 선택
+		var msgs = document.querySelectorAll(".msg");
+		var $msgs = $(".msg");
+		console.log("msgs", msgs);
+		console.log("$msgs", $msgs);
+		console.log('-------------------------------------');
+		
+		//부모& 자식 엘리먼트 선택
+		var $subjects = $("#subjects");
+		console.log($subjects.children()); //자식
+		console.log($subjects.children(":first-child")); //첫번째 자식
+		console.log($subjects.find("*")); //모든 자손을 선택
+		console.log($subjects.find("a")); //자손에서 a태그 선택 
+		console.log('--------------------------------------');
+		console.log($subjects.parent()); //부모 : body
+		console.log($subjects.parents()); //조상 : body, html
+	</script>
+</body>
+</html>

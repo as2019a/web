@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <style>
+    	body{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		
+    	.text-center{
+    		margin: 2px;
+    		padding: 10px;
+    		background-color: teal;
+    		color: blue;
+    	}
+    	
+    	.text-center:hover{
+    		background-color: olive;
+    		color: orange;
+    	}
+    	
+    	.btn:hover {
+    		background-color: aqua;
+			color: green;
+		}
+		
+		.five{
+			color: olive;
+		}
+		
+		.five:hover {
+			color: orange;
+		}
+    </style>
+  </head>
+  <body>
+  	<h1 class="text-center">MODAL</h1>
+    <button type="button" class="btn btn-primary"
+    		data-toggle="modal"
+    		data-target="#my-modal"
+    		data-backdrop="static">Modal</button>
+    <div class="modal fade" id="my-modal">
+    	<div class="modal-dialog modal-sm">
+    		<div class="modal-content">
+	    		<div class="modal-header">
+	    			<button type="button" class="close"
+	    					data-dismiss="modal">
+	    				<span>&times;</span>
+	    			</button>
+	    			<h4 class="modal-title">Modal title</h4>
+	    		</div>
+	    		<div class="modal-body">
+	    			<p>입력폼을 완성해 주세요</p>
+	    			<form action="">
+	    				<div class="form-group">
+	    					<input type="text" placeholder="아이디..."
+	    							class="form-control"/>
+	    				</div>
+	    				<div class="form-group">
+	    					<input type="email" placeholder="E-mail..."
+	    							class="form-control"/>
+	    				</div>
+	    				<div class="form-group">
+	    					<input type="text" placeholder="Name..."
+	    							class="form-control"/>
+	    				</div>
+	    			</form>
+	    		</div>
+	    		<div class="modal-footer">
+	    			<a href="" class="btn btn-info">Google</a>
+	    			<button type="button" class="btn btn-dager"
+	    					data-dismiss="modal">닫기</button>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+    <h5 class="five">Hello Html Button</h5>
+    <a href="/hello.html" class="btn btn-info">Hello</a>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

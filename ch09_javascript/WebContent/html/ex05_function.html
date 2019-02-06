@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/* int plus(int a, int b){
+			return a+b;
+		} */
+		//함수의 선언
+		function plus(a, b){
+			return a + b;
+		}
+		
+		console.log("plus", plus(30, 50));
+		console.log("plus", plus("hello", "world"));
+		
+		//익명 함수
+		var minus = function(num1, num2){
+			return num1 - num2;
+		}
+		console.log("minus", minus(10, 15));
+		
+		//실습 areaOfCircle을 정의하시오(Math.PI) 
+		function areaOfCircle(radius){
+			return Math.PI * Math.pow(radius, 2);
+		}
+		console.log('areaOfCircle', areaOfCircle(10));
+		
+		//함수를 변수에 담을 수 있기 때문에 함수를 파라미터로 넘기거나 리턴으로 받아 올 수 있다.
+		function print(fs, first, second){
+			//fs : plus
+			//first : 10
+			//secong : 20
+			var result = fs(first, second);
+			console.log(result);
+		}
+		print(plus, 10, 20);
+		print(minus, 10, 20);
+		
+		//함수를 만들어 주는 함수
+		function makeFunction(prefix){
+			return function(msg){
+				console.log(prefix+":"+msg);
+			}	
+		}
+		
+		makeFunction("메시지")("안녕하세요");
+		makeFunction("msg")("Hello");
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

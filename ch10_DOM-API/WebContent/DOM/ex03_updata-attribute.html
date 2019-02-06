@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="id" placeholder="Enter ID" />
+	<input type="password" id="password" placeholder="Enter password" />
+	<button type="button" onclick="check();">로그인</button>
+	<script>
+		function check(){
+			var id = document.querySelector("#id");
+			var password = document.querySelector("#password");
+			if(id.value.length > 10){
+				alert("아이디는 10글자 초과할 수 없습니다.");
+				id.value = "";
+				//여기까지 왔다면 placeholder를 입력
+				id.placeholder = "잘 좀 입력해주세요";
+				return;
+			}
+			
+			//password가 5글자 이하 10글자 이상이면 잘못 입력했다는 경고가 뜨게 하시오.
+			if(password.value.length <= 5 || password.value.length >= 10){
+				alert("패스워드를 6글자 이상 9글자 이하로 입력해주세요");
+				password.value = "";
+				return;
+			}
+			alert('로그인 성공!!!');
+		}
+	</script>
+</body>
+</html>

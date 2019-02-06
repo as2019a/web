@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h1>Hello World</h1>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+	<script src="/js/jquery-3.3.1.js"></script>
+	<script>
+		console.log(jQuery);
+		console.log($);
+		console.log(jQuery == $);
+		
+		jQuery("h1").css({backgroundColor:"green"});
+		$("h1").css({color:"tomato"});
+		
+		//js object
+		var h1Tag = document.querySelector("h1");
+		//jQuery object //int_a -> 헝가리표기법
+		var $h1Tag = $("h1");
+		console.log(h1Tag);
+		console.log($h1Tag);
+		//js object -> jQuery object
+		console.log($(h1Tag));
+		//jQuery -> js object 
+		console.log($h1Tag[0]);
+	</script>	
+</body>
+</html>

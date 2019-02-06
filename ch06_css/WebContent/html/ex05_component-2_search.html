@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{box-sizing: border-box;}
+	body {
+		margin:0;
+		background-color: #0652DD;
+	}
+	
+	.search-box{
+		/*text-align:center;
+		height:100vh;
+		line-height:100vh;*/
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%, -50%);
+		background-color:#2f3640;
+		height:60px;
+		padding:10px;
+		border-radius: 30px;
+	}
+	
+	.search-txt{
+		border:none;
+		background: none;
+		outline: none;
+		padding: 0;
+		color:white;
+		font-size: 16px;
+		line-height: 40px;
+		width: 0;
+		transition: 0.5s;
+	}
+	.search-btn{
+		text-decoration: none;
+		color:#0652DD;
+		width: 40px;
+		height: 40px;
+		display:block;
+		background-color: #2f3640;
+		float: right;
+		line-height: 40px;
+		text-align: center;
+		font-size: 20px;
+		font-weight: bold;
+		border-radius: 50%;
+		transition : 0.5s;
+		
+	}	
+	.search-box:hover > .search-txt{
+		width: 240px;
+	}
+	.search-box:hover > .search-btn{
+		background-color: white;
+	}
+</style>
+</head>
+<body>
+	<div class="search-box">
+		<input type="text" class="search-txt"/>
+		<a href="" class="search-btn">?</a>
+	</div>
+</body>
+</html>

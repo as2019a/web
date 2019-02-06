@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1{
+		position:absolute;
+	}
+</style>
+</head>
+<body>
+	<h1>Animate</h1>
+	<button type="button" onclick="animateRight();">to right</button>
+	<button type="button" onclick="animateLeft();">to left</button>
+	<button type="button" onclick="animateLoop();">loop</button>
+	<button type="button" onclick="$('h1').stop();">stop</button>
+	<button type="button" onclick="$('h1').clearQueue();">clear</button>
+	<h2>Hide $ Show</h2>
+	<button onclick="$('h2').hide(300);">hide</button>
+	<button onclick="$('h2').show(300);">show</button>
+	<button onclick="$('h2').toggle(1000);">toggle</button>
+	<h3>Fade</h3>
+	<button onclick="$('h3').fadeIn(500);">fade in</button>
+	<button onclick="$('h3').fadeOut(500);">fade out</button>
+	<button onclick="$('h3').fadeToggle('slow');">fade toggle</button>
+	<button onclick="$('h3').fadeTo(500, 0.5);">fade to</button>
+	<p>Slide</p>
+	<button onclick="$('p').slideUp(500);">slide up</button>
+	<button onclick="$('p').slideDown(500);">slide down</button>
+	<button onclick="$('p').slideToggle(500);">slide toggle</button>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		function animateRight() {
+			$("h1").animate({left:window.innerWidth+"px"},3000);
+		}
+		function animateLeft() {
+			$("h1").animate({left:"0px"},3000);
+		}
+		function animateLoop() {
+			animateRight();
+			$("h1").animate({left:"0px"},3000,animateLoop);
+		}
+	</script>
+</body>
+</html>
